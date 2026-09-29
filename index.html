@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산은행 페이지 본따 만들기</title>
+    <style>
+        body {
+            margin: 0; 
+            font-family: 'Malgun Gothic', sans-serif;
+            background-color: #ffffff;
+        }
+        
+       
+        .header-container {
+            background-color: #f5f5f5;
+        }
+
+       
+        .header-inner {
+            max-width: 1200px;
+            height: 80px; 
+            margin: 0 auto; 
+            padding: 0 20px;
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; 
+            box-sizing: border-box;
+        }
+        
+        .bnk-logo {
+            display: flex;
+            align-items: center; 
+            font-size: 28px;
+            font-weight: 900;   
+        }
+
+        .bnk-red {
+            color: #d11234;      
+            margin-right: 8px;   
+        }
+
+        .bnk-gray {
+            color: #3d3c3c;
+        }
+
+        
+        .nav-menu {
+            display: flex; 
+            gap: 30px; 
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        
+        .red-line {
+            border: none;
+            border-top: 2px solid #d11234;
+            margin: 0;
+        }
+
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 30px auto; 
+            padding: 0 20px;
+            display: flex; 
+            gap: 20px; 
+            box-sizing: border-box;
+        }
+
+       
+        .adbox { 
+            flex: 1; 
+            height: 400px;
+            background-color: rgb(174, 167, 154);
+            color: white;
+            padding: 30px;
+            box-sizing: border-box; 
+        }
+
+        .adbox h1 {
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+      
+        .toolbox-wrapper {
+            display: flex;
+            flex-direction: column; /* 세로 정렬 지시 */
+            justify-content: space-between; /* 400px 높이 안에서 도구상자 3개가 위, 중간, 아래로 균등하게 찢어짐 */
+            height: 400px; /* 왼쪽 광고박스 높이와 완벽하게 일치시킴 */
+        }
+
+        .toolbox {
+            width: 120px;
+            height: 120px;
+            background-color: rgb(174, 167, 154);
+            color: white;
+            display: flex;
+            align-items: center; /* 텍스트 세로 중앙 정렬 */
+            justify-content: center; /* 텍스트 가로 중앙 정렬 */
+            box-sizing: border-box;
+        }
+
+        .product-wrapper{
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .prouduct{
+            width: 120px;
+            height: 120px;
+            background-color: rgb(174, 167, 154);
+            color: white;
+            display: flex;
+            align-items: center; /* 텍스트 세로 중앙 정렬 */
+            justify-content: center; /* 텍스트 가로 중앙 정렬 */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <div class="header-container">
+        <div class="header-inner">
+            <div class="bnk-logo">
+                <span class="bnk-red">BNK</span>
+                <span class="bnk-gray">부산은행</span>
+            </div>
+
+            <div class="nav-menu">
+                <span class="bnk-gray">개인뱅킹</span>
+                <span class="bnk-gray">기업뱅킹</span>
+                <span class="bnk-gray">금융상품</span>
+            </div>
+        </div>
+    </div>
+
+    <hr class="red-line">    
+
+    <div class="main-container">
+       
+        <div class="adbox"> 
+            <p>광고 영역</p>
+            <h1>부산은행 페이지 본따 만들기</h1>
+            <p>이 페이지는 부산은행의 웹사이트를 참고하여 만든 예제입니다.</p>
+        </div>
+
+       
+        <div class="toolbox-wrapper">
+            <div class="toolbox">도구 상자 1</div>
+            <div class="toolbox">도구 상자 2</div>
+            <div class="toolbox">도구 상자 3</div>
+        </div>
+
+        <div class="product-wrapper">
+            <div class="prouduct">도구 상자 1</div>
+
+        </div>
+    </div>
+</body>
+</html>
