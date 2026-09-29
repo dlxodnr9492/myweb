@@ -84,7 +84,11 @@
             font-size: 28px;
         }
 
-      
+        .bnk-gray a {
+            color: gray;          /* 원하는 회색조 색상 */
+            text-decoration: none; /* 밑줄 제거 */
+        }
+
         .toolbox-wrapper {
             display: flex;
             flex-direction: column; /* 세로 정렬 지시 */
@@ -130,7 +134,7 @@
             </div>
 
             <div class="nav-menu">
-                <span class="bnk-gray">개인뱅킹</span>
+                <span class="bnk-gray"><a href="#">개인뱅킹</a></span>
                 <span class="bnk-gray">기업뱅킹</span>
                 <span class="bnk-gray">금융상품</span>
             </div>
@@ -154,10 +158,6 @@
             <div class="toolbox">도구 상자 3</div>
         </div>
 
-        <div class="product-wrapper">
-            <div class="prouduct">도구 상자 1</div>
-
-        </div>
     </div>
 </body>
 </html>
