@@ -1,102 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>menu</title>
-    <link href="https://cdnfonts.com" rel="stylesheet">
-    <style>
-               *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: white;
-            font-family: 'SamsungOne', sans-serif;
-        }
-        /* ⭐️ [추가] 브라우저 전체의 기본 흰색 배경을 원천 차단 */
-        body {
-            background-color: black;
-            overflow-x: hidden;
-        }
-        .main{
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            gap: 10px;
-            width: 100%; /* 부모 너비 확보 */
-        }
-        .phone{
-            width: 100%;
-            max-width: 100%;  
-            height: 100vh;
-            object-fit: cover;
-        }
-        .comment{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 10px;
-            margin-top: -300px; /* 텍스트를 위로 조금 더 끌어올림 */
-            position: relative;
-            z-index: 5;
-        }
-        .container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-            background-color: black;
-            width: 100%;
-        }
-        .comment span:first-child{
-            font-size: 48px;
-            color: white;
-            font-weight: bold;
-        }
-        .comment span:last-child{
-            font-size: 24px;
-            color: darkgray;
-        }
-        /* ⭐️ [추가] 메뉴 버튼 영역도 마이너스 마진으로 이미지 검은 반사 구역 위로 올림 */
-        .menu-wrap {
-            margin-top: -160px; 
-            position: relative;
-            z-index: 5;
-        }
-        ul{
-            list-style-type: none;
-            display: flex;
-            gap : 100px;
-        }
-        /* 기획안처럼 링크 글씨 밑줄 및 디자인 제거 */
-        ul li a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 4px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="main">
-            <img src="phone6.jpeg" class="phone">
-            <div class="comment">
-                <span>Galaxy S26 Ultra</span>
-                <span>상상했던 모든 혁신을 가장 얇고 가볍게. 갤럭시 S26 울트라.<br>
-                    F1.4 카메라로 어둠을 지우고, 프라이버시 디스플레이로 당신의 시선을 지키다.</span>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>WCB Cafe - Menu</title>
+        <meta name="description" content="명품 블랜드 커피와 유기농 음식을 제공하는 카페">
+
+        <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div id="menu" class="big-bg">
+            <header class="page-header wrapper">
+                
+                <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCB 카페 홈"></a></h1>
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="news.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+            <div class="menu-content wrapper">
+                <h2 class="page-title">Menu</h2>
+                <p>WCB 카페는 명품 블랜드 커피와 유기농 음식을 제공하는 카페입니다. 첨가물을 넣지 않은 재료로 건강한 음식을 만듭니다.</p>
+            </div><!-- /.menu-content -->  
+        </div><!-- /#menu -->
+
+        <div class="wrapper grid">
+            <div class="item big-box">
+                <img src="images/menu1.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
             </div>
-        </div>
-        <div>
-            <ul>
-                <li><a href="camera.html">카메라 알아보기</a></li>
-                <li><a href="menu.html">알아보기</a></li>
-                <li><a href="menu.html">알아보기</a></li>
-                <li><a href="menu.html">알아보기</a></li>
-            </ul>
-        </div>
-    </div>
-</body>
+             <div class="item">
+                <img src="images/menu2.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+             <div class="item">
+                <img src="images/menu3.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+             <div class="item">
+                <img src="images/menu4.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+             <div class="item">
+                <img src="images/menu5.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+             <div class="item">
+                <img src="images/menu6.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+             <div class="item">
+                <img src="images/menu7.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+             <div class="item">
+                <img src="images/menu8.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+             <div class="item">
+                <img src="images/menu9.jpg" alt="">
+                <p>메뉴 사진과 메뉴의 이름</p>
+            </div>
+        </div><!-- /.grid -->
+       
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2019 WCBCafe</small></p>
+            </div>
+        </footer>
+    </body>
 </html>
