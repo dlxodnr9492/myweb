@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>성냥팔이 소녀 이야기 page 2</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Grandiflora+One&family=Orbit&family=Poor+Story&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-image: url('img2/pagewall.jpg');
+            background-size: cover;      
+            background-position: center;   
+            background-attachment: fixed; 
+            color: #333;
+            font-family: "Gowun Batang", serif;
+            padding: 3vh 20px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container{
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .image-box {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            width: 45%;         
+            height: 100%;
+            justify-content: center;
+            flex-shrink: 0;     
+        }
+
+        .image-box img {
+            width: calc(50% - 5px);         
+            height: 100%;        
+            object-fit: contain;   
+        }
+
+        .context {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85); 
+            padding: 40px 30px;                    
+            border-radius: 15px;                   
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+            border: 1px solid rgba(255, 255, 255, 0.5);  
+        }
+
+        .context p {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            word-break: keep-all;
+        }
+
+       
+        .next-button {
+            display: block;
+            margin: 2vh auto 0;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            background: #333;
+            color: white;
+            font-family: "Gowun Batang", serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+
+        .next-button:hover {
+            background: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            color: inherit;         
+            text-decoration: none;  
+        }
+
+
+        @media (max-width: 850px) {
+            body {
+                overflow: auto;
+                height: auto;
+            }
+
+            .container {
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 20px;
+                height: auto;
+            }
+
+            .image-box {
+                width: 100%;
+                height: auto;
+            }
+
+            .image-box img {
+                width: calc(50% - 5px);
+                height: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="context">
+            <p>
+                집 두 채 사이 모퉁이에 다른 집보다 길 쪽으로 더 튀어나온 곳이 있었는데 
+                소녀는 그곳에 앉아서 발을 끌어당겨 몸을 웅크렸다. 점점 더 몸이 추웠다. 
+                하지만 집에 갈 엄두가 나지 않았다. 성냥을 팔지 못했기에, 
+                1센트도 벌지 못했기에 아버지는 분명 이 소녀를 흠씬 두들겨 팰 것이다. 
+                게다가 집은 너무 춥고 지붕 말고는 불어대는 바람을 가릴 게 없었다. 
+                제일 크게 갈라진 틈을 지푸라기와 천 조각으로 막았는데도 그랬다. 
+                손은 동상을 입은 듯 거의 움직일 수도 없었다. 
+                작은 성냥 하나가 온기를 어느 정도 더해줄지도 몰랐다! 
+                소녀가 성냥갑에서 성냥 하나를 꺼내 벽에 그어서 손을 따뜻하게 할 수만 있다면……. 
+                소녀는 하나를 꺼냈다. 치지직! 성냥은 탁 소리를 내며 타올랐다! 
+                온기를 주며 작은 초처럼 환한 불꽃을 일으켰다. 
+                소녀가 그 불꽃 위로 손을 올리자, 이상한 빛이 일었다! 
+                정말이지 반짝반짝 빛나는 황동 손잡이와 뚜껑이 달린 거대한 쇠 난로 앞에 자신이 앉아 있는 것 같았다. 
+                불이 얼마나 멋지게 타오르는지! 얼마나 편안한지! 소녀가 발도 녹이려 발을 내밀었다. 
+                문득 작은 불꽃이 꺼지고 난로는 사라졌다. 손안에는 다 타버린 성냥만 남아 있었다.
+            </p>
+        </div>
+        <div class="image-box">
+            <img src="img2/page2.jpg">
+            <img src="img2/page2-2.jpg">
+        </div>
+    </div>
+
+    <button class="next-button" type="button">
+        <a href="page3.html">페이지 넘기기</a>
+    </button>
+</body>
+
+</html>

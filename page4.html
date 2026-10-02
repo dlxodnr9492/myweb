@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>성냥팔이 소녀 이야기 page 4</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Grandiflora+One&family=Orbit&family=Poor+Story&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-image: url('img2/pagewall.jpg');
+            background-size: cover;      
+            background-position: center;   
+            background-attachment: fixed; 
+            color: #333;
+            font-family: "Gowun Batang", serif;
+            padding: 3vh 20px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container{
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .image-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 45%;         
+            height: 100%;
+            justify-content: center;
+            flex-shrink: 0;        
+        }
+
+        .image-box img {
+            width: 100%;         
+            height: calc(50% - 8px);        
+            object-fit: contain;   
+        }
+
+        .context {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            /* 흰색 박스 스타일링 추가 */
+            background: rgba(255, 255, 255, 0.85); /* 85% 투명도의 부드러운 흰색 배경 */
+            padding: 40px 30px;                    /* 박스 내부 글자 여백 */
+            border-radius: 15px;                   /* 모서리 부드럽게 라운딩 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 은은한 고급 그림자 */
+            border: 1px solid rgba(255, 255, 255, 0.5);  /* 미세한 테두리 광택 효과 */
+        }
+
+        .context p {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            word-break: keep-all;
+        }
+
+       
+        .next-button {
+            display: block;
+            margin: 2vh auto 0;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            background: #333;
+            color: white;
+            font-family: "Gowun Batang", serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+
+        .next-button:hover {
+            background: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            color: inherit;         
+            text-decoration: none;  
+        }
+
+
+        @media (max-width: 850px) {
+            body {
+                overflow: auto;
+                height: auto;
+            }
+
+            .container {
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 20px;
+                height: auto;
+            }
+
+            .image-box {
+                width: 100%;
+                height: auto;
+            }
+
+            .image-box img {
+                height: auto;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="context">
+            <p>
+                성냥을 하나 더 벽에 그었다. 
+                다시 환하게 불꽃이 일었다.
+                그 불꽃 속에 할머니가 친절하고도 사랑스럽게,
+                맑고 환하게 빛을 내며 서 있었다. 소녀가 외쳤다. 
+                “할머니! 아, 저를 데려가 주세요! 성냥이 꺼지면 할머니가 사라지리란 걸 알아요. 
+                할머니는 따뜻한 난로처럼 사라질 거예요. 저 맛있는 거위와 아름다운 크리스마스트리처럼요!” 
+                소녀는 할머니와 함께 있고 싶었기에 재빨리 성냥 꾸러미를 모두 밝혔다. 
+                성냥이 무척이나 환하게 빛나서 낮보다 더 밝아졌다. 할머니가 그렇게나 웅장하고 아름다운 적이 없었다. 
+                할머니가 소녀를 품에 안았다. 두 사람은 땅 위로 밝고도 경쾌하게 날아올랐다. 
+                아주, 아주 높이. 저 위 추위도 배고픔도, 두려움도 없는 곳으로……. 
+                두 사람은 하느님과 함께 있었다. 
+                하지만 모퉁이에서, 미소 짓는 입술에 붉은 뺨의 어린 소녀가 벽에 기대어 앉아 묵은 해의 마지막 밤에 얼어 죽었다.
+                새해의 태양이 측은한 한 사람의 모습 위로 떠올랐다. 소녀는 그곳에 얼어 뻣뻣하게 앉아있었다, 
+                거의 다 타버린 성냥 꾸러미를 움켜쥔 채로…….
+            </p>
+        </div>
+        <div class="image-box">
+            <img src="img2/page4.jpg">
+            <img src="img2/page4-2.jpg">
+        </div>
+    </div>
+
+    <button class="next-button" type="button">
+        <a href="#">끝</a>
+    </button>
+</body>
+
+</html>

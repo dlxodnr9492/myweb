@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA복습 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Grandiflora+One&family=Orbit&family=Poor+Story&display=swap" rel="stylesheet">
+    <style>
+        
+        .gowun-batang-regular {
+        font-family: "Gowun Batang", serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        body{
+            font-family: "Gowun Batang", serif;
+            background-image: url(img3/background.jpg);
+            background-size: cover;      
+            background-position: center;   
+            background-attachment:scroll; 
+            font-size: large;
+        }
+        ::placeholder{
+            font-family: "Gowun Batang", serif;
+        }
+
+        .container{
+            text-align: left;
+        }
+        button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            background: #333;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        textarea{
+            width: 800px;
+            height: 100px;
+            font-size: large;
+            font-family: "Gowun Batang", serif;
+            background-color: whitesmoke;
+        }
+        
+        hr{
+            border: 1px solid black;
+        }
+        span{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JAVA 복습 페이지 입니다</h1>
+        <hr>
+        <p style="font-weight: bold;">그동안 배웠던 JAVA에 대해 복습할 수 있는 3문제를 냈어요. 최선을 다해 맞혀주세요.</p>
+        <hr>
+        <div>
+            <p>
+                <span>문제 1. 인터페이스와 오버라이딩 규칙</span><br> 
+                클래스가 부모 클래스를 상속받을 때는 <span>extends</span>를 씁니다. 
+                그렇다면 만들어진 인터페이스(예: InfoManger)를 클래스에 장착할 때 쓰는 키워드는 무엇이며,<br> 
+                인터페이스 안에 선언된 메서드를 클래스에서 <span>구현(오버라이딩)</span>할 때 에러가 나지 않으려면 메서드 앞에 반드시 붙여야 하는 <span>키워드(접근 제어자)</span>는 무엇일까요?
+            </p>
+            <textarea placeholder="정답을 입력해주세요."></textarea><br>
+            <button type="button"><a href="correcrt1.html">문제 1정답</a>
+            </button>
+        </div>
+        <hr>
+
+        <div>
+            <p>
+                <span>문제 2. Object의 한계와 마법의 이름표</span><br> 
+                부모 리모컨으로 자식 객체를 다루다가, 자식 고유의 기능(예: basic_salary)을 쓰기 위해 (Permanent_employee)e 처럼<br> 
+                강제로 타입을 내리는 것을 <span>'다운캐스팅(Downcasting)'</span>이라고 합니다.<br>
+                그런데 모든 객체를 담을 수 있는 최상위 부모인 Object 상자를 쓰면 꺼낼 때마다 매번 이 다운캐스팅을 해야 해서 너무 귀찮고 위험합니다.<br> 
+                이를 해결하기 위해 아예 클래스나 인터페이스 이름 옆에 <span>T </span>같은 이름표를 붙여서 "이 상자는 얘 전용이야!"라고 찜해버리는 문법의 이름은 무엇일까요?
+            </p>
+            <textarea placeholder="정답을 입력해주세요."></textarea><br>
+            <button type="button"><a href="correcrt2.html">문제 2정답</a>
+            </button>
+        </div>
+        <hr>
+
+        <div>
+            <p>
+                <span>문제 3. 자바 컬렉션 3대장의 용도</span><br> 
+                데이터를 저장할 때 0번, 1번 같은 <span>'번호표(인덱스)'</span>를 매겨서 관리하며 크기가 무한히 늘어나는 것은 <span>ArrayList (List 구조)</span>입니다.<br>
+                그렇다면 번호표 대신 학번이나 이름 같은 <span>'이름표(Key)'</span>를 부여해서 데이터를 저장하며,<br> 
+                <span>Key</span>는 절대 중복될 수 없고 파이썬의 <span>딕셔너리(Dictionary)</span>와 완벽하게 똑같이 동작하는 이 자료구조의 이름은 무엇일까요?
+            </p>
+            <textarea placeholder="정답을 입력해주세요."></textarea><br>
+            <button type="button"><a href="correcrt3.html">문제 2정답</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

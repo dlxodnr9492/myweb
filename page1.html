@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>성냥팔이 소녀 이야기 page 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Grandiflora+One&family=Orbit&family=Poor+Story&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-image: url('img2/pagewall.jpg');
+            background-size: cover;      
+            background-position: center;   
+            background-attachment: fixed; 
+            color: #333;
+            font-family: "Gowun Batang", serif;
+            padding: 3vh 20px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container{
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .image-box {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            width: 45%;         
+            height: 100%;
+            justify-content: center;
+            flex-shrink: 0;     
+        }
+
+        .image-box img {
+            width: calc(50% - 5px);         
+            height: 100%;        
+            object-fit: contain;   
+        }
+
+        .context {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85); 
+            padding: 40px 30px;                    
+            border-radius: 15px;                   
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+            border: 1px solid rgba(255, 255, 255, 0.5);  
+        }
+
+        .context p {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            word-break: keep-all;
+        }
+
+       
+        .next-button {
+            display: block;
+            margin: 2vh auto 0;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            background: #333;
+            color: white;
+            font-family: "Gowun Batang", serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+
+        .next-button:hover {
+            background: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            color: inherit;         
+            text-decoration: none;  
+        }
+
+
+        @media (max-width: 850px) {
+            body {
+                overflow: auto;
+                height: auto;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                height: auto;
+            }
+
+            .image-box {
+                width: 100%;
+                height: auto;
+            }
+
+            .image-box img {
+                width: calc(50% - 5px);
+                height: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="image-box">
+            <img src="img2/page1.jpg">
+            <img src="img2/page1-4.jpg">
+        </div>
+        <div class="context">
+            <p>
+                지독히도 추운 날이었다. 눈이 내리고 어둠이 찾아왔다. 
+                그해의 마지막 저녁이었다. 한 가엾은 소녀가 모자도 쓰지 않고 맨발로 춥고 우울하게 거리를 걷고 있다. 
+                물론 집을 나설 때 신발을 신고 있었지만 지금은 아무 소용이 없었다. 
+                신발은 엄마의 것이었기에 소녀에게 너무 컸다. 어린 소녀는 길을 뛰어 건너다가 
+                신발 한 짝을 잃어버렸는데 마차 두 대가 덜컹거리며 엄청나게 빨리 지나가는 바람에 신발을 다시 찾을 수 없었다. 
+                한 소년이 나중에 아이를 낳으면 요람으로 쓰겠다면서 나머지 한 짝을 가지고 달아나버렸다. 
+                그래서 어린 소녀는 맨발로 걷고 있었다. 두 발은 꽁꽁 얼어 울긋불긋했다. 
+                낡은 앞치마에 들고 가는 성냥갑 몇 개가 있었다. 소녀는 성냥 하나를 손으로 들어 내밀었다. 
+                하지만 하루 종일 소녀한테 성냥을 사려는 사람은 아무도 없었다. 
+                단 한 사람도 1센트를 주지 않았다. 추위와 배고픔으로 벌벌 떨면서 소녀는 기어갔다. 
+                비참한 그림이다, 가엾은 소녀! 눈꽃이 소녀의 긴 머리카락 위로 떨어져 내려 목을 구불구불 휘감았다. 
+                창문으로 불빛이 새어 나오고 거위를 굽는 근사한 냄새도 흘러나왔다. 
+                한 해의 마지막 날이었다. 그렇다, 소녀는 그 생각이 간절했다!
+            </p>
+        </div>
+    </div>
+
+    <button class="next-button" type="button">
+        <a href="page2.html">페이지 넘기기</a>
+    </button>
+</body>
+
+</html>
