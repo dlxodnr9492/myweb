@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>성냥팔이 소녀 이야기</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Grandiflora+One&family=Orbit&family=Poor+Story&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-image: url('img2/pagewall.jpg');
+            background-size: cover;      
+            background-position: center;   
+            background-attachment: fixed; 
+            color: #333;
+            font-family: "Gowun Batang", serif;
+            
+        }
+
+
+        /* 전체 표지 */
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 60px;
+        }
+
+
+        /* 표지 내용 */
+
+        .book-cover {
+            width: 100%;
+            max-width: 1100px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 90px;
+
+            padding: 60px;
+
+            background: white;
+        }
+
+
+        /* 왼쪽 이미지 */
+
+        .image-box {
+            width: 48%;
+
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .image-box img {
+            width: 100%;
+            max-width: 430px;
+
+            display: block;
+
+            object-fit: contain;
+        }
+
+
+        /* 오른쪽 글 */
+
+        .title {
+            width: 52%;
+
+            text-align: left;
+
+            padding-right: 20px;
+        }
+
+
+        /* 작은 문구 */
+
+        .subtitle {
+            display: block;
+
+            font-family: "Grandiflora One", cursive;
+            font-weight: bold;
+            font-size: 20px;
+
+            color: #777;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* 제목 */
+
+        h1 {
+            font-family: "Gowun Batang", serif;
+
+            font-size: clamp(38px, 4vw, 58px);
+
+            font-weight: bold;
+
+            line-height: 1.5;
+
+            letter-spacing: -2px;
+
+            color: #333;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* 작가 */
+
+        .author {
+            font-family: "Grandiflora One", cursive;
+            font-weight: bold;
+            font-size: 20px;
+
+            color: #888;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* 장식용 선 */
+
+        .line {
+            width: 55px;
+            height: 1px;
+
+            background: #aaa;
+
+            margin: 0 0 30px 0;
+        }
+        .next-button {
+
+            display: block;
+
+            margin: 25px auto 0;
+
+            padding: 12px 35px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #333;
+
+            color: white;
+
+            font-family: "Gowun Batang", serif;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .next-button:hover {
+
+            background: #555;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.2);
+
+        }
+        a {
+            color: inherit;         /* 부모 글자색을 그대로 따라가게 만듦 (파란색 제거) */
+            text-decoration: none;  /* 밑줄 제거 */
+        }
+
+
+        /* 모바일 */
+
+        @media (max-width: 750px) {
+
+            .container {
+                padding: 30px 20px;
+            }
+
+
+            .book-cover {
+                flex-direction: column;
+
+                gap: 40px;
+
+                padding: 30px 20px;
+            }
+
+
+            .image-box {
+                width: 100%;
+            }
+
+
+            .image-box img {
+                max-width: 360px;
+            }
+
+
+            .title {
+                width: 100%;
+
+                text-align: center;
+
+                padding: 0;
+            }
+
+
+            .subtitle {
+                font-size: 17px;
+
+                margin-bottom: 25px;
+            }
+
+
+            h1 {
+                font-size: 34px;
+
+                margin-bottom: 25px;
+            }
+
+
+            .author {
+                font-size: 18px;
+            }
+
+
+            .line {
+                margin: 0 auto 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <div class="book-cover">
+
+
+            <!-- 왼쪽 이미지 -->
+
+            <div class="image-box">
+
+                <img
+                    src="img2/girl.jpg"
+                    alt="성냥팔이 소녀"
+                >
+
+            </div>
+
+
+            <!-- 오른쪽 텍스트 -->
+
+            <div class="title">
+
+
+                <span class="subtitle">
+                    "작은 불꽃 하나에 담긴,<br>
+                    가장 간절했던 겨울 밤의 꿈"
+                </span>
+
+
+                <div class="line"></div>
+
+
+                <h1>
+                    성냥팔이<br>
+                    소녀 이야기
+                </h1>
+
+
+                <span class="author">
+                    Andersen 단편선
+                </span>
+
+                 <button class="next-button" type="button">
+                     <a href="page1.html">페이지 넘기기</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
