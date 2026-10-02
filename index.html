@@ -1,36 +1,355 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <title>WCB Cafe</title>
-        <meta name="description" content="명품 블랜드 커피와 유기농 음식을 제공하는 카페">
 
-        <!--CSS-->
-        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Philsopher" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="icon" type="image/png" href="images/favicon.png">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body>
-        <div id="home" class="big-bg">
-            <header class="page-header wrapper">
-                <h1><a href="index.html"><img class ="logo" src="images/logo.svg" alt="WCB 카페 홈"></a></h1>
-                <nav>
-                    <ul class="main-nav">
-                        <li><a href="news.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+    <title>사랑하는 사람에게</title>
 
-            </header>
+    <style>
 
-            <div class="home-content wrapper">
-                <h2 class="page-title">We'll Make Your Day</h2>
-                <p>멋진 카페에서 힐링 시간을 가지세요. 첨가물을 넣지 않은 재료로 건강한 음식을 만듭니다.</p>
-                <a class="button" href="menu.html">메뉴 보기</a>
-            </div><!-- /.home-content -->
-        </div><!-- /#home -->
-    </body>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: "Noto Serif KR", serif;
+            background: #f5f1ed;
+        }
+
+
+        /* 전체 화면 */
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #f5f1ed;
+        }
+
+
+        /* 가운데 배경 이미지 영역 */
+
+        .background {
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            left: 7%;
+            right: 7%;
+
+            background-image: url("img/dear.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* 기존 65%보다 훨씬 밝게 */
+            filter: brightness(88%);
+
+            z-index: 0;
+        }
+
+
+        /* 이미지 위에 아주 약한 흰색 효과 */
+
+        .container::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.18)
+                );
+
+            z-index: 1;
+
+            pointer-events: none;
+        }
+
+
+        /* 중앙 콘텐츠 */
+
+        .content-box {
+            position: relative;
+
+            z-index: 2;
+
+            width: 85%;
+            max-width: 750px;
+
+            padding: 55px 70px;
+
+            text-align: center;
+
+            color: #333;
+
+            /* 흰색 반투명 배경 */
+            background: rgba(255, 255, 255, 0.78);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.15);
+
+            backdrop-filter: blur(2px);
+
+            animation: appear 1.2s ease forwards;
+        }
+
+
+        /* 작은 문구 */
+
+        .small-title {
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 5px;
+
+            color: #777;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* 메인 제목 */
+
+        h1 {
+            font-size: clamp(32px, 5vw, 58px);
+
+            font-weight: 500;
+
+            letter-spacing: -2px;
+
+            color: #333;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* 구분선 */
+
+        hr {
+            width: 70px;
+
+            height: 1px;
+
+            border: none;
+
+            background: rgba(80, 80, 80, 0.5);
+
+            margin: 0 auto 28px;
+        }
+
+
+        /* 서브 제목 */
+
+        h2 {
+            font-size: clamp(17px, 2vw, 22px);
+
+            font-weight: 400;
+
+            color: #555;
+
+            margin-bottom: 22px;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        /* 설명 */
+
+        p {
+            font-family: "Noto Sans KR", sans-serif;
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            color: #555;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* 버튼 */
+
+        .card-button {
+            display: inline-block;
+
+            padding: 14px 34px;
+
+            color: white;
+
+            background: #444;
+
+            text-decoration: none;
+
+            font-family: "Noto Sans KR", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            border-radius: 30px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* 버튼에 마우스를 올렸을 때 */
+
+        .card-button:hover {
+            transform: translateY(-4px);
+
+            background: #666;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* 등장 애니메이션 */
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* 모바일 */
+
+        @media (max-width: 700px) {
+
+            .background {
+                left: 0;
+                right: 0;
+            }
+
+
+            .content-box {
+                width: 88%;
+
+                padding: 40px 25px;
+
+                border-radius: 12px;
+            }
+
+
+            h1 {
+                font-size: 32px;
+            }
+
+
+            h2 {
+                font-size: 17px;
+            }
+
+
+            p {
+                font-size: 13px;
+
+                line-height: 1.9;
+            }
+
+
+            .card-button {
+                padding: 13px 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- 배경 이미지 -->
+
+        <div class="background"></div>
+
+
+        <!-- 중앙 콘텐츠 -->
+
+        <div class="content-box">
+
+
+            <div class="small-title">
+                DEAR. for you
+            </div>
+
+
+            <h1>
+                소중한 사람에게
+            </h1>
+
+
+            <hr>
+
+
+            <h2>
+                "조금은 서툴지만, 진심을 담아"
+            </h2>
+
+
+            <p>
+                말로는 조금 쑥스러워 전하지 못했던 이야기들이 있나요?<br>
+
+                평범한 하루도 특별하게 만드는 마법은 작은 진심에서 시작됩니다.<br>
+
+                지금 사랑하는 사람의 이름을 떠올리며,<br>
+
+                당신의 따뜻한 마음을 꾹꾹 눌러 담은 카드를 보내보세요.
+            </p>
+
+
+            <a href="select_card.html" class="card-button">
+                카드 선택하기 →
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</body>
+
 </html>

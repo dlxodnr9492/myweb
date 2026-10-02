@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Card</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Grandiflora+One&family=Orbit&family=Poor+Story&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f1ed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        /* 전체 편지 영역 */
+        .letter {
+            position: relative;
+            width: 900px;
+            min-height: 650px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        /* 배경 이미지 */
+        .background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("img/flower.jpg");
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        /* 배경을 옅게 만드는 레이어 */
+        .background::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        /* 실제 내용 */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 55px 70px;
+            min-height: 650px;
+        }
+
+        /* 제목 */
+        h1 {
+            text-align: center;
+            font-family: "Gowun Batang", serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            font-family: "Gowun Batang", serif;
+            color: #777;
+            margin-bottom: 35px;
+        }
+
+        /* 카드 이미지 */
+        .card-image {
+            display: block;
+            width: 260px;
+            height: 160px;
+            object-fit: cover;
+            margin: 0 auto 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 폰트 및 크기 선택 공통 */
+        .d1, .d3 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .d1 input, .d3 input {
+            display: none;
+        }
+
+        .d1 label, .d3 label {
+            display: inline-block;
+            margin: 4px;
+            padding: 8px 15px;
+            border: 1px solid #bbb;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.65);
+            color: #555;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .d1 label:hover, .d3 label:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* 선택된 폰트 */
+        #gowun-batang:checked + label,
+        #grandiflora-one:checked + label,
+        #poor-story:checked + label,
+        #orbit-regular:checked + label {
+            color: #e17c82;
+            border-color: #e17c82;
+        }
+
+        #gowun-batang:checked + label {
+            font-family: "Gowun Batang", serif;
+        }
+
+        #grandiflora-one:checked + label {
+            font-family: "Grandiflora One", cursive;
+            font-weight: bold;
+        }
+
+        #poor-story:checked + label {
+            font-family: "Poor Story", system-ui;
+        }
+
+        #orbit-regular:checked + label {
+            font-family: "Orbit", sans-serif;
+        }
+
+        /* 받는 사람 및 제목 */
+        .letter-info {
+            margin-bottom: 25px;
+        }
+
+        .info-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-group label {
+            width: 75px;
+            flex-shrink: 0;
+            font-family: "Gowun Batang", serif;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .info-group input {
+            flex: 1;
+            min-width: 0;
+            padding: 10px 14px;
+            border: 1px solid rgba(150, 130, 130, 0.35);
+            border-radius: 8px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.55);
+            font-family: "Gowun Batang", serif;
+            font-size: 16px;
+        }
+
+        .info-group input:focus {
+            border-color: #d99a9e;
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        /* 편지 입력 영역 */
+        .d2 {
+            width: 100%;
+            min-height: 280px;
+            padding: 25px 30px;
+            background: rgba(255, 255, 255, 0.45);
+            border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+        }
+
+        #msg {
+            width: 100%;
+            height: 250px;
+            resize: vertical;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #333;
+            font-family: "Gowun Batang", serif;
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        #msg::placeholder {
+            color: #888;
+        }
+
+        /* 폰트 적용 */
+        .d1:has(#gowun-batang:checked) ~ .d2 #msg {
+            font-family: "Gowun Batang", serif;
+        }
+
+        .d1:has(#grandiflora-one:checked) ~ .d2 #msg {
+            font-family: "Grandiflora One", cursive;
+        }
+
+        .d1:has(#poor-story:checked) ~ .d2 #msg {
+            font-family: "Poor Story", system-ui;
+        }
+
+        .d1:has(#orbit-regular:checked) ~ .d2 #msg {
+            font-family: "Orbit", sans-serif;
+        }
+
+        /* 글자 크기 적용 */
+        .d3:has(#size-small:checked) ~ .d2 #msg {
+            font-size: 16px;
+        }
+
+        .d3:has(#size-medium:checked) ~ .d2 #msg {
+            font-size: 20px;
+        }
+
+        .d3:has(#size-large:checked) ~ .d2 #msg {
+            font-size: 26px;
+        }
+
+        /* 편지 보내기 버튼 */
+        .send-button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            background: #333;
+            color: white;
+            font-family: "Gowun Batang", serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .send-button:hover {
+            background: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 모바일 */
+        @media (max-width: 700px) {
+            body {
+                padding: 15px;
+            }
+
+            .letter {
+                width: 100%;
+            }
+
+            .content {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .card-image {
+                width: 220px;
+                height: 140px;
+            }
+
+            .info-group {
+                gap: 8px;
+            }
+
+            .info-group label {
+                width: 65px;
+                font-size: 14px;
+            }
+
+            .info-group input {
+                font-size: 14px;
+            }
+
+            .d2 {
+                padding: 20px;
+            }
+
+            #msg {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letter">
+
+        <!-- 꽃 사진 배경 -->
+        <div class="background"></div>
+
+        <div class="content">
+
+            <h1>편지 작성하기</h1>
+
+            <p class="description">
+                선택한 카드에 어울리는 글씨를 골라
+                마음을 담아보세요.
+            </p>
+
+            <!-- 선택한 카드 -->
+            <img
+                src="img/flower.jpg"
+                class="card-image"
+                alt="Flower Card"
+            >
+
+            <!-- 폰트 선택 -->
+            <div class="d1">
+                <input type="radio" name="font" id="gowun-batang" checked>
+                <label for="gowun-batang">Gowun</label>
+
+                <input type="radio" name="font" id="grandiflora-one">
+                <label for="grandiflora-one">Grandiflora</label>
+
+                <input type="radio" name="font" id="poor-story">
+                <label for="poor-story">Poor Story</label>
+
+                <input type="radio" name="font" id="orbit-regular">
+                <label for="orbit-regular">Orbit</label>
+            </div>
+
+            <!-- 글자 크기 선택 -->
+            <div class="d3">
+                <input type="radio" name="size" id="size-small">
+                <label for="size-small">작게</label>
+
+                <input type="radio" name="size" id="size-medium" checked>
+                <label for="size-medium">보통</label>
+
+                <input type="radio" name="size" id="size-large">
+                <label for="size-large">크게</label>
+            </div>
+
+            <!-- 받는 사람 및 제목 -->
+            <div class="letter-info">
+                <div class="info-group">
+                    <label for="recipient">받는 사람</label>
+                    <input
+                        type="text"
+                        id="recipient"
+                        placeholder="받는 사람의 이름"
+                    >
+                </div>
+
+                <div class="info-group">
+                    <label for="subject">편지 제목</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="편지의 제목을 입력하세요"
+                    >
+                </div>
+            </div>
+
+            <!-- 편지 작성 -->
+            <div class="d2">
+                <textarea
+                    id="msg"
+                    placeholder="이곳에 마음을 담아보세요..."
+                ></textarea>
+
+                <button class="send-button" type="button">
+                    편지 보내기
+                </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

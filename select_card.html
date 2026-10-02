@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>카드 선택하기</title>
+
+    <style>
+
+        /* 전체 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Serif KR", serif;
+            background: #faf7f5;
+            color: #333;
+        }
+
+        /* 전체 페이지 */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+
+            margin: 0 auto;
+            padding: 60px 0;
+
+            text-align: center;
+        }
+
+        /* 제목 */
+        h1 {
+            font-size: 42px;
+            font-weight: 500;
+
+            margin-bottom: 15px;
+
+            color: #333;
+        }
+
+        /* 제목 밑 작은 줄 */
+        .title-line {
+            width: 60px;
+            height: 2px;
+
+            background: #555;
+
+            border: none;
+
+            margin: 0 auto 30px;
+        }
+
+        /* 상단 이미지 */
+        .main-image {
+            width: 100%;
+            max-width: 750px;
+            height: 300px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.12);
+
+            margin-bottom: 35px;
+        }
+
+        /* 설명 */
+        .description {
+            margin-bottom: 10px;
+
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .guide {
+            color: #888;
+
+            font-family: "Noto Sans KR", sans-serif;
+
+            font-size: 14px;
+
+            margin-bottom: 50px;
+        }
+
+        /* 카드 선택 영역 */
+        .letter {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        /* 카드 하나 */
+        .card {
+            position: relative;
+
+            width: 250px;
+
+            cursor: pointer;
+        }
+
+        /* 카드 이름 */
+        .btn {
+            padding: 18px 20px;
+
+            background: white;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 16px;
+
+            letter-spacing: 3px;
+
+            transition: 0.3s;
+        }
+
+        /* 마우스를 올렸을 때 */
+        .card:hover .btn {
+            background: #333;
+
+            color: white;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 카드 이미지 영역 */
+        .layer {
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 15px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.12);
+
+            animation: showCard 0.3s ease;
+        }
+
+        /* hover하면 카드 표시 */
+        .card:hover .layer {
+            display: block;
+        }
+
+        /* 카드 제목 */
+        .layer h2 {
+            font-size: 18px;
+
+            font-weight: 400;
+
+            margin-bottom: 10px;
+        }
+
+        .layer hr {
+            border: none;
+
+            height: 1px;
+
+            background: #eee;
+
+            margin-bottom: 15px;
+        }
+
+        /* 카드 이미지 */
+        .layer img {
+            width: 100%;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+        }
+
+        /* 카드 선택 버튼 */
+        .select-button {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 8px 20px;
+
+            background: #333;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 20px;
+
+            font-family: "Noto Sans KR", sans-serif;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .select-button:hover {
+            background: #555;
+        }
+
+        /* 등장 애니메이션 */
+        @keyframes showCard {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+        /* 모바일 */
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 40px 0;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .main-image {
+                height: 220px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 300px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- 페이지 제목 -->
+
+        <h1>카드 선택하기</h1>
+
+        <hr class="title-line">
+
+
+        <!-- 메인 이미지 -->
+
+        <img
+            src="img/select_card.jpg"
+            alt="카드 선택"
+            class="main-image"
+        >
+
+
+        <!-- 설명 -->
+
+        <h2 class="description">
+            소중한 사람에게 보낼 카드를 선택해주세요.
+        </h2>
+
+        <p class="guide">
+            카드 이름에 마우스를 올려보세요.
+        </p>
+
+
+        <!-- 카드 선택 영역 -->
+
+        <div class="letter">
+
+
+            <!-- FLOWER -->
+
+            <div class="card">
+
+                <div class="btn">
+                    FLOWER
+                </div>
+
+                <div class="layer">
+
+                    <h2>Flower Card</h2>
+
+                    <hr>
+
+                    <img
+                        src="img/flower.jpg"
+                        alt="꽃 카드"
+                    >
+
+                    <a href="flower.html" class="select-button">
+                        이 카드 선택
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER -->
+
+            <div class="card">
+
+                <div class="btn">
+                    PAPER
+                </div>
+
+                <div class="layer">
+
+                    <h2>Paper Card</h2>
+
+                    <hr>
+
+                    <img
+                        src="img/paper.jpg"
+                        alt="종이 카드"
+                    >
+
+                    <a href="paper.html" class="select-button">
+                        이 카드 선택
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NATURE -->
+
+            <div class="card">
+
+                <div class="btn">
+                    NATURE
+                </div>
+
+                <div class="layer">
+
+                    <h2>Nature Card</h2>
+
+                    <hr>
+
+                    <img
+                        src="img/nature.jpg"
+                        alt="자연 카드"
+                    >
+
+                    <a href="nature.html" class="select-button">
+                        이 카드 선택
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+```
