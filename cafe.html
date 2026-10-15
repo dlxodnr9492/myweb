@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* =========================
+        1. 전체 기본 설정
+        ========================= */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 45px 20px;
+            min-height: 100vh;
+            font-family: 'Malgun Gothic', sans-serif;
+            color: #38291f;
+            background:
+                radial-gradient(ellipse at top left, #e8e8d9 0%, transparent 45%),
+                linear-gradient(135deg, #f8f6ef, #eee9de);
+        }
+
+        /* =========================
+        2. 메인 제목
+        ========================= */
+        h1 {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 35px 20px;
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 700;
+            letter-spacing: -2px;
+            text-align: center;
+            color: #38291f;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        h1::before {
+            content: "SLOW BREW  ·  SPECIALTY COFFEE";
+            display: block;
+            margin-bottom: 18px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #77836a;
+        }
+
+        /* =========================
+        3. 구분선
+        ========================= */
+        hr {
+            max-width: 1000px;
+            height: 1px;
+            margin: 20px auto;
+            border: none;
+            background: linear-gradient(
+                to right,
+                transparent,
+                #c9c0b2,
+                transparent
+            );
+        }
+
+        /* =========================
+        4. 메뉴 버튼 영역
+        ========================= */
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 45px auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul li {
+            flex: 1 1 200px;
+            max-width: 280px;
+        }
+
+        ul button {
+            position: relative;
+            width: 100%;
+            min-height: 150px;
+            padding: 30px 20px;
+            overflow: hidden;
+
+            border: 1px solid #e3dbce;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.8);
+
+            color: #38291f;
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(56, 41, 31, 0.04);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        /* 버튼 위쪽의 포인트 장식 */
+        ul button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #78866a;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        /* 버튼 아래쪽에 작은 영문 장식 */
+        ul button::after {
+            display: block;
+            margin-top: 12px;
+            font-family: Georgia, serif;
+            font-size: 10px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            color: #998978;
+        }
+
+        #b1::after {
+            content: "AMERICANO";
+        }
+
+        #b2::after {
+            content: "CAFE LATTE";
+        }
+
+        #b3::after {
+            content: "VANILLA LATTE";
+        }
+
+        /* 마우스를 올렸을 때 */
+        ul button:hover {
+            transform: translateY(-8px);
+            background: #fff;
+            border-color: #aab49d;
+            box-shadow: 0 18px 35px rgba(56, 41, 31, 0.12);
+        }
+
+        ul button:hover::before {
+            transform: scaleX(1);
+        }
+
+        ul button:active {
+            transform: translateY(-2px);
+        }
+
+        /* 키보드로 선택할 때도 표시 */
+        ul button:focus-visible {
+            outline: 3px solid #9da98f;
+            outline-offset: 4px;
+        }
+
+        /* =========================
+        5. 메뉴 정보 테이블
+        ========================= */
+        #content {
+            width: 100%;
+            max-width: 1000px;
+            margin: 45px auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+
+            background: #fffefa;
+            border: 1px solid #e4dccf;
+            border-radius: 16px;
+
+            box-shadow: 0 15px 40px rgba(56, 41, 31, 0.07);
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        /* 테이블 제목 */
+        #content th {
+            padding: 22px 18px;
+            background: #3d4b39;
+            color: #f8f6ef;
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-align: left;
+
+            border: none;
+        }
+
+        /* 테이블 데이터 */
+        #content td {
+            padding: 25px 18px;
+            background: #fffefa;
+
+            font-size: 14px;
+            line-height: 1.9;
+            color: #665548;
+
+            border: none;
+            border-bottom: 1px solid #eee8df;
+
+            transition: background 0.25s ease;
+        }
+
+        /* 메뉴명 강조 */
+        #content td:nth-child(2) {
+            color: #38291f;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* 가격 강조 */
+        #content td:nth-child(3) {
+            color: #718064;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* 마우스를 올린 행 */
+        #content tr:hover td {
+            background: #f5f5ec;
+        }
+
+        /* 마지막 행의 아래쪽 선 제거 */
+        #content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* =========================
+        6. 부드러운 등장 효과
+        ========================= */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+        7. 모바일 화면 대응
+        ========================= */
+        @media (max-width: 600px) {
+            body {
+                padding: 25px 12px;
+            }
+
+            h1 {
+                padding: 25px 5px;
+                font-size: 30px;
+            }
+
+            h1::before {
+                font-size: 9px;
+                letter-spacing: 3px;
+            }
+
+            ul {
+                gap: 12px;
+                margin: 30px auto;
+            }
+
+            ul li {
+                flex: 1 1 130px;
+            }
+
+            ul button {
+                min-height: 125px;
+                padding: 20px 8px;
+                font-size: 14px;
+                border-radius: 13px;
+            }
+
+            #content {
+                margin: 30px auto;
+                table-layout: fixed;
+                overflow-wrap: anywhere;
+            }
+
+            #content th {
+                padding: 13px 5px;
+                font-size: 10px;
+                letter-spacing: 0;
+            }
+
+            #content td {
+                padding: 16px 6px;
+                font-size: 11px;
+                line-height: 1.7;
+            }
+
+            #content td:nth-child(2) {
+                font-size: 12px;
+            }
+
+            #content td:nth-child(3) {
+                white-space: normal;
+            }
+        }
+
+        /* 움직임 줄이기를 선호하는 사용자 배려 */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>카페 메뉴 소개하기</h1>
+    <hr>
+    <ul>
+        <li><button id="b1" onclick="loadDoc(0)">아메리카노</button></li>
+        <li><button id="b2" onclick="loadDoc(1)">카페라떼</button></li>
+        <li><button id="b3" onclick="loadDoc(2)">바닐라 라떼</button></li>
+    </ul>
+    <hr>
+    <table id="content">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>comment</th>
+        </tr>
+    </table>
+
+    <script>
+        function loadDoc(num){ 
+                const xhttp = new XMLHttpRequest(); 
+                const content = document.getElementById("content");
+                xhttp.open("GET", "cafe_info.txt"); 
+                xhttp.onload = function(){ 
+                    const result = JSON.parse(xhttp.responseText);
+                    console.log(result);
+                    let tableRows = `
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>price</th>
+                            <th>comment</th>
+                        </tr>
+                        `;
+        
+                    const coffeeList = result.menuList;
+                        const menu = coffeeList[num];
+                        tableRows +=`
+                            <tr>
+                                <td>${menu.id}</td>
+                                <td>${menu.name}</td>
+                                <td>${menu.price}</td>
+                                <td>${menu.desc}</td>
+                            </tr>
+                        `;
+                    
+                    content.innerHTML = tableRows;
+
+
+                
+                };
+                xhttp.send(); 
+
+                
+            
+        }
+        
+    </script>
+</body>
+</html>
